@@ -18,7 +18,7 @@ pipeline {
         stage('containerizing') {
             steps {
                 echo 'containerizing....'
-		sh 'docker run -dt --name rajesh -p 4500:80 httpd'
+		sh 'docker run -dt --name raje -p 4550:80 httpd'
             }
         }
     }
