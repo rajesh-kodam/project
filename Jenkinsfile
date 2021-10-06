@@ -2,10 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('containerizing') {
+        stage('starting docker') {
+            steps {
+                echo 'start docker....'
+		sh 'sudo systemctl start docker'
+            }
             steps {
                 echo 'containerizing....'
-		sh 'docker run -dt --name raj -p 5555:80 httpd'
+		sh 'docker run -dt --name rajj -p 4444:80 httpd'
             }
         }
     }
