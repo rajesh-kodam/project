@@ -7,6 +7,7 @@ pipeline {
                 echo 'start docker....'
 		sh 'sudo systemctl start docker'
             }
+	}
 	stage('containerizing') {	
             steps {
                 echo 'containerizing....'
@@ -14,5 +15,4 @@ pipeline {
             }
         }
     }
-  }
 }
