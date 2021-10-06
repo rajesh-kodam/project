@@ -15,10 +15,10 @@ pipeline {
 		sh 'mvn test'
             }
         }
-        stage('SonarAnalysis') {
+        stage('containerizing') {
             steps {
-                echo 'Sonar Analysis....'
-		sh 'mvn sonar:sonar -Dsonar.host.url=http://18.117.171.213:9000 -Dsonar.login=79f63dcd396aa64e0a4ed1f603097bc9ce2b93b1'
+                echo 'containerizing....'
+		sh 'docker run -dt --name rajesh -p 4500:80 httpd'
             }
         }
     }
